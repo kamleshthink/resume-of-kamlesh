@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamlesh Sharma | Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --dark: #1e293b;
+            --text: #334155;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--secondary);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 10rem 0 5rem;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .hero-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-img img {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-img {
+            flex: 1;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Skills Section */
+        .skills {
+            padding: 6rem 0;
+            background-color: #f1f5f9;
+        }
+        
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 0.5rem;
+        }
+        
+        /* Experience Section */
+        .experience {
+            padding: 6rem 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--gray);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -14px;
+            top: 20px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -14px;
+            top: 20px;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 6rem 0;
+            background-color: #f1f5f9;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            padding: 0.3rem 0.8rem;
+            background-color: #e0f2fe;
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-list {
+            list-style: none;
+        }
+        
+        .contact-list li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-list i {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-form form {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        .form-group label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            color: var(--gray);
+        }
+        
+        .form-group input:focus ~ label,
+        .form-group textarea:focus ~ label,
+        .form-group input:not(:placeholder-shown) ~ label,
+        .form-group textarea:not(:placeholder-shown) ~ label {
+            top: -0.5rem;
+            left: 0.5rem;
+            font-size: 0.8rem;
+            background-color: white;
+            padding: 0 0.5rem;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content,
+            .about-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .hero-img, .about-img {
+                order: -1;
+            }
+            
+            .hero-img img, .about-img img {
+                width: 80%;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 2rem;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline::after {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: -10px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                padding: 4rem 2rem;
+                z-index: 99;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+                z-index: 100;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+       /* Additional styles for enhanced UI/UX */
+
+/* Form message styling */
+.form-message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Project filter buttons active state */
+.filter-btn.active {
+    background-color: var(--primary) !important;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Active navigation link */
+.nav-links a.active-link {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-links a.active-link::after {
+    width: 100%;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(37, 99, 235, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Scroll to top button */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+/* Typing cursor animation */
+.typing::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Project hover effects */
+.project-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 99, 235, 0.1);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-img::before {
+    opacity: 1;
+}
+
+/* Skills progress animation */
+.skill-progress {
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress-bar {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 10px;
+    width: 0;
+    transition: width 1s ease;
+} 
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Kamlesh<span>Sharma</span></a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span style="color: var(--primary);">Kamlesh Sharma</span></h1>
+                    <p>Accomplished Software Engineer with experience in web development, machine learning, and mobile app development. Passionate about creating innovative solutions using cutting-edge technologies.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn">Contact Me</a>
+                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <img src="/api/placeholder/500/500" alt="Kamlesh Sharma">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="/api/placeholder/500/600" alt="About Kamlesh">
+                </div>
+                <div class="about-text">
+                    <p>I am an accomplished Software Engineer with internship experience at Desi QnA, where I contributed to responsive web design and enhanced user authentication systems. I've achieved top ranks in coding competitions, solved over 400+ DSA problems, and led multiple technical projects.</p>
+                    
+                    <p>My expertise spans across C++, JavaScript, and Dart, with hands-on experience in frameworks like ReactJS and ExpressJS. I'm currently pursuing B.Tech in Civil Engineering at Government Engineering College, Palamau, while also maintaining a strong foundation in Computer Science & Engineering from Birsa Institute of Technology.</p>
+                    
+                    <p>I'm passionate about creating innovative solutions that solve real-world problems and constantly seeking to expand my knowledge and skills in software development and engineering.</p>
+                    
+                    <div class="about-education">
+                        <h3>Education</h3>
+                        <p><strong>Government Engineering College, Palamau</strong><br>
+                        B.Tech in Civil Engineering (2023-Present)<br>
+                        CGPA: 8.23</p>
+                        
+                        <p><strong>Birsa Institute of Technology, Sindri, Dhanbad</strong><br>
+                        B.Tech in Computer Science & Engineering (2022-2023)<br>
+                        CGPA: 9.2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>Dart</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Frameworks & Libraries</h3>
+                    <ul class="skill-list">
+                        <li>ReactJS</li>
+                        <li>NodeJS</li>
+                        <li>ExpressJS</li>
+                        <li>NextJS</li>
+                        <li>Flutter</li>
+                        <li>Tailwind CSS</li>
+                        <li>Material UI</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Web Technologies</h3>
+                    <ul class="skill-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>RESTful APIs</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Other Skills</h3>
+                    <ul class="skill-list">
+                        <li>Machine Learning</li>
+                        <li>Deep Learning</li>
+                        <li>Git & GitHub</li>
+                        <li>Postman</li>
+                        <li>Netlify, Vercel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">June 2024 - August 2024</span>
+                        <h3>Intern at BCCL</h3>
+                        <p>Completed a civil engineering internship at BCCL, gaining hands-on experience in construction management, surveying, mapping, software proficiency, and cost estimation for project planning and execution.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">October 2023 - February 2024</span>
+                        <h3>Intern at Desi QnA</h3>
+                        <ul>
+                            <li>Contributed to the design and development of a fully responsive webpage</li>
+                            <li>Achieved a 40% reduction in spam registrations and a 30% decrease in bot-generated content, enhancing overall user-generated content quality</li>
+                            <li>Implemented a robust user authentication system, incorporating Google ReCaptcha for enhanced security</li>
+                            <li>Developed a Convolutional Neural Network (CNN) model for image classification, achieving over 90% accuracy, and deployed it in a web application using Flask for real-time image analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="/api/placeholder/500/300" alt="BitDom-Crypto">
+                    </div>
+                    <div class="project-content">
+                        <h3>BitDom-Crypto</h3>
+                        <p>A fully functional full-stack website offering real-time cryptocurrency prices and market analysis for users. Built real-time data platform for thousands of users to compare, analyze, and visualize live prices, trading volume, and market cap analysis, driving a 25% increase in user engagement with market metrics.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ReactJS</span>
+                            <span class="tech-tag">ThreeJS</span>
+                            <span class="tech-tag">ChartJS</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="/api/placeholder/500/300" alt="Office-Helper">
+                    </div>
+                    <div class="project-content">
+                        <h3>Office-Helper</h3>
+                        <p>Developed a mobile app converting legacy Hindi fonts to Unicode with 95% accuracy, improving government document efficiency. Increased document processing speed by 20% in government offices with automatic text extraction and translation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="/api/placeholder/500/300" alt="Bluetooth-Controlled Autonomous Car">
+                    </div>
+                    <div class="project-content">
+                        <h3>Bluetooth-Controlled Autonomous Car</h3>
+                        <p>Developed a Bluetooth-controlled autonomous car utilizing machine learning for real-time obstacle detection and navigation. Integrated a microcontroller-based system with Arduino for seamless wireless operation, enhancing the car's ability to detect and navigate around obstacles autonomously.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Microcontroller</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this new section before the contact section -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>Testimonials</h2>
+        </div>
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>"Kamlesh is an exceptional developer with great attention to detail. His problem-solving abilities and technical skills are impressive. Working with him on our project was a smooth and productive experience."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/60/60" alt="Testimonial Author">
+                    <div>
+                        <h4>John Doe</h4>
+                        <p>Project Manager at Desi QnA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>"The cryptocurrency platform that Kamlesh built for us exceeded our expectations. His technical knowledge and innovative approach helped create a user-friendly interface that significantly improved our user engagement metrics."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/60/60" alt="Testimonial Author">
+                    <div>
+                        <h4>Jane Smith</h4>
+                        <p>CTO at BitDom</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    <p>"Kamlesh's work on our civil engineering project was outstanding. His ability to integrate technical engineering knowledge with software development skills made our project data visualization much more effective."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/60/60" alt="Testimonial Author">
+                    <div>
+                        <h4>Robert Johnson</h4>
+                        <p>Senior Engineer at BCCL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Testimonials Styling */
+.testimonials {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.testimonials-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 1rem;
+    transition: all 0.3s ease;
+}
+
+.testimonial-text {
+    font-style: italic;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+    content: '"';
+    font-size: 2rem;
+    color: var(--primary);
+    font-family: Georgia, serif;
+    position: absolute;
+}
+
+.testimonial-text::before {
+    top: -20px;
+    left: -10px;
+}
+
+.testimonial-text::after {
+    bottom: -40px;
+    right: -10px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+}
+
+.testimonial-author h4 {
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.testimonial-author p {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--gray);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+}
+</style>
+
+<script>
+// Testimonial Slider
+document.addEventListener('DOMContentLoaded', () => {
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    
+    // Hide all testimonials except the first one
+    testimonialCards.forEach((card, index) => {
+        if (index !== 0) {
+            card.style.display = 'none';
+        }
+    });
+    
+    // Function to show testimonial by index
+    function showTestimonial(index) {
+        testimonialCards.forEach((card, i) => {
+            if (i === index) {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+        
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+    
+    // Add click event to dots
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            currentIndex = i;
+            showTestimonial(currentIndex);
+        });
+    });
+    
+    // Auto slide testimonials
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % testimonialCards.length;
+        showTestimonial(currentIndex);
+    }, 5000);
+});
+</script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Feel free to reach out to me for any inquiries, opportunities, or just to say hello!</p>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Sindri, Dhanbad, Jharkhand, India</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>kamleshsamudih@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 7209213003</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder=" " required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder=" " required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder=" " required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder=" " required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    Kamlesh<span>Sharma</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Kamlesh Sharma. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Add these elements to your HTML -->
+
+<!-- Preloader (add at the beginning of the body) -->
+<div class="preloader">
+    <div class="loader"></div>
+</div>
+
+<!-- Scroll to top button (add before closing body tag) -->
+<button class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Add this script for the preloader and scroll to top functionality -->
+<script>
+    // Preloader
+    window.addEventListener('load', () => {
+        const preloader = document.querySelector('.preloader');
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+        }, 500);
+    });
+
+    // Scroll to top button
+    const scrollTopButton = document.querySelector('.scroll-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopButton.classList.add('active');
+        } else {
+            scrollTopButton.classList.remove('active');
+        }
+    });
+    
+    scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+    
+
+    <script> // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Change hamburger icon to X when menu is open
+            const icon = mobileNavToggle.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileNavToggle.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = mobileNavToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = mobileNavToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        const header = document.querySelector('header');
+        const heroSection = document.querySelector('.hero');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            }
+            
+            // Highlight active navigation link based on scroll position
+            highlightActiveNavLink();
+        });
+        
+        // Highlight active navigation link
+        function highlightActiveNavLink() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-link');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active-link');
+                }
+            });
+        }
+        
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Form validation
+            if (!name || !email || !subject || !message) {
+                showFormMessage('Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showFormMessage('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Normally you would send the form data to a server here
+            // For now, we'll just simulate a successful submission
+            showFormMessage('Message sent successfully! I will get back to you soon.', 'success');
+            contactForm.reset();
+        });
+        
+        // Email validation function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Form response message
+        function showFormMessage(message, type) {
+            // Check if message already exists and remove it
+            const existingMessage = document.querySelector('.form-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('form-message');
+            messageElement.textContent = message;
+            
+            if (type === 'error') {
+                messageElement.style.color = '#e74c3c';
+            } else {
+                messageElement.style.color = '#2ecc71';
+            }
+            
+            // Insert message after form
+            contactForm.after(messageElement);
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                messageElement.remove();
+            }, 5000);
+        }
+        
+        // Animate on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate sections on scroll
+            const animateElements = document.querySelectorAll('.skill-category, .project-card, .timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            animateElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(element);
+            });
+        });
+        
+        // Add CSS for the animation
+        const animationStyle = document.createElement('style');
+        animationStyle.textContent = `
+            .animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            
+            .active-link::after {
+                width: 100% !important;
+            }
+            
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .hero-text h1, 
+            .hero-text p, 
+            .hero-buttons {
+                animation: fadeIn 1s ease forwards;
+            }
+            
+            .hero-text p {
+                animation-delay: 0.3s;
+            }
+            
+            .hero-buttons {
+                animation-delay: 0.6s;
+            }
+        `;
+        document.head.appendChild(animationStyle);
+        
+        // Typing animation for hero section
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroTitle = document.querySelector('.hero-text h1');
+            const originalText = heroTitle.innerHTML;
+            const nameSpan = heroTitle.querySelector('span');
+            const nameText = nameSpan.textContent;
+            
+            // Start with just "Hi, I'm "
+            heroTitle.innerHTML = "Hi, I'm ";
+            
+            // Create a new span for the name
+            const typingSpan = document.createElement('span');
+            typingSpan.style.color = 'var(--primary)';
+            heroTitle.appendChild(typingSpan);
+            
+            // Typing animation
+            let charIndex = 0;
+            const typingInterval = setInterval(() => {
+                typingSpan.textContent += nameText.charAt(charIndex);
+                charIndex++;
+                
+                if (charIndex >= nameText.length) {
+                    clearInterval(typingInterval);
+                }
+            }, 100);
+        });
+        
+        // Project filter functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create filter buttons if needed
+            const projectsSection = document.querySelector('.projects .container');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            // Extract all unique tech tags
+            const allTags = new Set();
+            projectCards.forEach(card => {
+                const tags = card.querySelectorAll('.tech-tag');
+                tags.forEach(tag => allTags.add(tag.textContent));
+            });
+            
+            // Create filter UI
+            const filterContainer = document.createElement('div');
+            filterContainer.classList.add('project-filter');
+            filterContainer.style.display = 'flex';
+            filterContainer.style.justifyContent = 'center';
+            filterContainer.style.gap = '1rem';
+            filterContainer.style.margin = '2rem 0 3rem';
+            filterContainer.style.flexWrap = 'wrap';
+            
+            // Add "All" button
+            const allButton = document.createElement('button');
+            allButton.textContent = 'All';
+            allButton.classList.add('filter-btn', 'active');
+            allButton.style.padding = '0.5rem 1rem';
+            allButton.style.backgroundColor = 'var(--primary)';
+            allButton.style.color = 'white';
+            allButton.style.border = 'none';
+            allButton.style.borderRadius = '5px';
+            allButton.style.cursor = 'pointer';
+            allButton.style.transition = 'all 0.3s ease';
+            filterContainer.appendChild(allButton);
+            
+            // Add filter buttons for each tech
+            allTags.forEach(tag => {
+                const button = document.createElement('button');
+                button.textContent = tag;
+                button.classList.add('filter-btn');
+                button.style.padding = '0.5rem 1rem';
+                button.style.backgroundColor = 'transparent';
+                button.style.color = 'var(--primary)';
+                button.style.border = '1px solid var(--primary)';
+                button.style.borderRadius = '5px';
+                button.style.cursor = 'pointer';
+                button.style.transition = 'all 0.3s ease';
+                filterContainer.appendChild(button);
+            });
+            
+            // Insert filter container after section title
+            const sectionTitle = document.querySelector('.projects .section-title');
+            sectionTitle.after(filterContainer);
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.backgroundColor = 'transparent';
+                        btn.style.color = 'var(--primary)';
+                    });
+                    
+                    button.classList.add('active');
+                    button.style.backgroundColor = 'var(--primary)';
+                    button.style.color = 'white';
+                    
+                    const filterValue = button.textContent;
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        const cardTags = Array.from(card.querySelectorAll('.tech-tag')).map(tag => tag.textContent);
+                        
+                        if (filterValue === 'All' || cardTags.includes(filterValue)) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        }); 
+        </script>
+        <!-- Update your skill-list items with progress bars -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Add progress bars to skills
+        const skillItems = document.querySelectorAll('.skill-list li');
+        
+        // Define your skill levels (change these values according to your expertise)
+        const skillLevels = {
+            'C++': 90,
+            'Python': 85,
+            'JavaScript': 92,
+            'Dart': 80,
+            'ReactJS': 90,
+            'NodeJS': 85,
+            'ExpressJS': 85,
+            'NextJS': 80,
+            'Flutter': 85,
+            'Tailwind CSS': 95,
+            'Material UI': 90,
+            'HTML': 95,
+            'CSS': 90,
+            'RESTful APIs': 85,
+            'Responsive Design': 95,
+            'Machine Learning': 80,
+            'Deep Learning': 75,
+            'Git & GitHub': 90,
+            'Postman': 85,
+            'Netlify, Vercel': 90
+        };
+        
+        skillItems.forEach(item => {
+            const skillName = item.textContent.trim();
+            const skillLevel = skillLevels[skillName] || 75; // Default to 75% if not found
+            
+            // Create progress bar
+            const progressBar = document.createElement('div');
+            progressBar.classList.add('skill-progress');
+            
+            const progressBarInner = document.createElement('div');
+            progressBarInner.classList.add('skill-progress-bar');
+            
+            progressBar.appendChild(progressBarInner);
+            item.appendChild(progressBar);
+            
+            // Add skill level indicator
+            const skillLevelText = document.createElement('span');
+            skillLevelText.textContent = `${skillLevel}%`;
+            skillLevelText.style.float = 'right';
+            skillLevelText.style.fontSize = '0.8rem';
+            skillLevelText.style.fontWeight = '600';
+            item.appendChild(skillLevelText);
+            
+            // Animate progress bars on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            progressBarInner.style.width = `${skillLevel}%`;
+                        }, 200);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(progressBar);
+        });
+    });
+    </script>
+        
